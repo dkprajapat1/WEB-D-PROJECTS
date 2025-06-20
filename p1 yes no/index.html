@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        body {
+            background-color: rgb(115, 215, 233);
+        }
+
+        .list {
+            background-color: lightblue;
+            list-style: none;
+            margin: 100px auto;
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(5, 100px);
+            justify-content: center;
+            border-radius: 20px 80px;
+            width: fit-content;
+            padding: 20px 100px 0px 100px;
+            box-shadow: 20px 11px 20px 0px rgb(50 18 18);
+        }
+
+        .no {
+            background-color: rgba(241, 233, 222, 0.712);
+            grid-row: 3/4;
+            grid-column: 4/5;
+            margin: auto;
+            padding: 20px 20px;
+            border-radius: 20px;
+            font-size: larger;
+            box-shadow: 10px 6px 10px rgb(109 144 166);
+        }
+
+        .yes {
+            background-color: rgba(241, 233, 222, 0.712);
+            grid-row: 3/4;
+            grid-column: 2/3;
+            margin: auto;
+            padding: 20px 20px;
+            border-radius: 20px;
+            font-size: larger;
+            box-shadow: 10px 6px 10px rgb(109 144 166);
+
+        }
+
+        .yes:hover {
+            box-shadow: none;
+            grid-row: 5/6;
+            grid-column: 5/6;
+        }
+        .no:hover {
+           background-color: rgb(118, 187, 210) ;
+           box-shadow: none;
+            
+        }
+
+        .message {
+            background-color: rgba(238, 35, 228, 0.47);
+            border-radius: 40px;
+            padding: 20px 90px;
+            grid-row: 1/2;
+            grid-column: 1/6;
+            margin: auto;
+            font-size: xx-large;
+        }
+
+        .message1 {
+            background-color: rgb(75, 233, 101);
+            font-size: x-large;
+            text-align: center;
+            border-radius: 40px;
+            margin: auto;
+            padding: 20px;
+            grid-row: 2/3;
+            grid-column: 2/5;
+        }
+
+        .note {
+            background-color: rgb(75, 233, 101);
+            font-size: x-large;
+            text-align: center;
+            border-radius: 40px;
+            margin: auto;
+            padding: 20px;
+            grid-row: 4/5;
+            grid-column: 1/6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <div class="message">Are you a human??</div>
+        <div class="message1">Prove it if you are!!</div>
+        <div class="yes button note1">Yes🤔</div>
+        <div class="no button">No🥲</div>
+        <div class="note note1">I know you're not. Don't even try! 😏</div>
+    </div>
+</body>
+
+</html>
