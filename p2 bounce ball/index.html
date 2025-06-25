@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        body{
+            background-color: rgb(66, 66, 245);
+        }
+        .surface {
+            background: linear-gradient(rgb(77, 255, 1), rgb(43, 126, 2));
+            margin-top: 70vh;
+            width: 60vw;
+            border-radius: 40px;
+            color: white;
+            font-weight: bolder;
+            text-align: center;
+            align-self: center;
+            justify-self: center;
+            padding: 20px;
+        }
+        .ball>img{
+             width: 50px;
+             height: 50px;
+             border-radius: 50%;
+               animation: imagebounce 1s cubic-bezier(0.41, -0.01, 0.68, 0.27) 2s infinite alternate-reverse;
+        }
+        .ball {
+            justify-self: center;
+            text-align: center;
+            align-content: center;
+            border: 3px solid black;
+            background: linear-gradient(rgb(249, 99, 99),darkred);
+            width: 50px;
+            height: 50px;
+            /* padding: 20px; */
+            border-radius: 50%;
+            animation: ballbounce 1s cubic-bezier(0.41, -0.01, 0.68, 0.27) 2s infinite alternate-reverse;
+        }
+
+        @keyframes ballbounce {
+            form {
+                translate: 0vw;
+            }
+           95%{
+             width: 70px;
+            height: 50px;
+           }
+            98% {
+                 width: 120px;
+            height: 40px;
+
+            }
+
+            100% {
+                background-color: rgb(255, 0, 0);
+                translate: 0vw 71vh;
+                width: 130px;
+            height: 30px;
+
+            }
+
+        }
+        @keyframes imagebounce {
+            form {
+                translate: 0vw;
+            }
+           95%{
+             width: 70px;
+            height: 50px;
+           }
+            98% {
+                 width: 120px;
+            height: 40px;
+
+            }
+
+            100% {
+                background-color: rgb(255, 0, 0);
+                /* translate: 0vw 71vh; */
+                width: 130px;
+            height: 30px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+  <div class="ball"> <img src="profilephoto.jpg"></div>
+    <div class="surface">surface</div>
+
+</body>
+
+</html>
