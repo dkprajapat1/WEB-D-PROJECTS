@@ -234,22 +234,25 @@ select:hover {
 
 .reason {
     padding: 20px;
-    width: 220px;
-    height: 17vmax;
-    border-radius: 10px;
+    width: 256px;
+    border-radius: 20px;
     background: linear-gradient(to top, rgb(1, 1, 47), rgb(62, 0, 51), rgb(32, 0, 59));
 }
 
 .reason img {
-    margin-left: 150px;
-    margin-top: 80px;
+    /* margin-left: 150px;
+    margin-top: 80px; */
+    position: relative;
+    left: 200px;
+
+    bottom: -19px;
     width: 60px;
-    filter: opacity(60%);
     border-radius: 10px;
+    filter: opacity(60%);
 }
 
 .reason>:nth-child(1) {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500px;
 }
 
@@ -263,7 +266,7 @@ select:hover {
 .questionbox {
     background-color: black;
     position: relative;
-    top: -190px;
+    top: -160px;
 }
 
 .questionbox>:first-child {
@@ -399,7 +402,6 @@ footer {
     .reason {
 
         width: 80vmax;
-        height: 10vmax;
     }
 
     .fontpage {
@@ -408,7 +410,8 @@ footer {
     }
 
     .reason img {
-       width: 0px;
+   left: 65vw;
+
     }
 }
 
@@ -418,7 +421,13 @@ footer {
         padding: 5px 10px;
 
     }
+
     .trending div {
         scale: 0.9;
-}
+    }
+
+     .reason img {
+   left: 55vw;
+
+    }
 }
