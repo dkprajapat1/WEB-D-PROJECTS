@@ -191,7 +191,7 @@ select:hover {
     color: black;
     font-size: 100px;
     font-weight: 700;
-    font-family: "Netflix Sans", " Helvetica Neue", " Segoe UI", Roboto, Ubuntu, sans-serif;
+    font-family:" Helvetica Neue", " Segoe UI", Roboto, Ubuntu, sans-serif;
     text-shadow: 0px 0px 5px white;
     position: relative;
     z-index: 10;
@@ -216,7 +216,7 @@ select:hover {
     background-color: black;
     margin-left: 10%;
     color: white;
-    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif
+    font-family:"Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif
 }
 
 .reasons {
@@ -275,7 +275,7 @@ select:hover {
     padding: 15px 0px;
     font-size: 24px;
     font-weight: 500;
-    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif
+    font-family:"Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif
 }
 
 .questions {
@@ -296,7 +296,7 @@ select:hover {
     justify-content: space-between;
     padding: 20px;
     background-color: rgba(63, 61, 61, 0.722);
-    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    font-family:"Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
     cursor: pointer;
 }
 
@@ -320,7 +320,7 @@ select:hover {
     color: white;
     padding: 15px;
     border-radius: 5px;
-    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    font-family: "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
     cursor: pointer;
 }
 
