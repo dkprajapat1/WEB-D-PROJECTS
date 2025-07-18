@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modal Toggle Login Page</title>
+<style>
+  /* Basic reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Modal background */
+  .modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  /* Show modal */
+  .modal-bg.active {
+    display: flex;
+  }
+
+  /* Modal container */
+  .modal {
+    background: #fff;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90vw;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s ease;
+  }
+  .close-btn:hover {
+    color: #000;
+  }
+
+  /* Toggle buttons */
+  .toggle-btns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 2rem;
+  }
+
+  .toggle-btns button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 2.5px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+  }
+
+  .toggle-btns button.active {
+    color: #2575fc;
+    border-color: #2575fc;
+  }
+
+  /* Form styles */
+  form {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  form.active {
+    display: flex;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1.8px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: #2575fc;
+  }
+
+  button.submit-btn {
+    padding: 0.8rem 1rem;
+    background: #2575fc;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease;
+  }
+
+  button.submit-btn:hover {
+    background: #1a52d1;
+  }
+
+  /* Forgot password link */
+  .forgot-pass {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .forgot-pass:hover {
+    color: #2575fc;
+  }
+
+  /* Open modal button */
+  .open-modal-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: #fff;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(37,117,252,0.5);
+    transition: background 0.3s ease;
+  }
+
+  .open-modal-btn:hover {
+    background: #e4eaff;
+  }
+
+  @media (max-width: 480px) {
+    .modal {
+      width: 90vw;
+      padding: 1.5rem;
+    }
+
+    .toggle-btns {
+      gap: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Button to open modal -->
+<button class="open-modal-btn" id="openModal">Login / Signup</button>
+
+<!-- Modal Background -->
+<div class="modal-bg" id="modalBg">
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+    <span class="close-btn" id="closeModal" aria-label="Close Modal">&times;</span>
+
+    <div class="toggle-btns" role="tablist">
+      <button class="active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginForm">Login</button>
+      <button id="signupTab" role="tab" aria-selected="false" aria-controls="signupForm">Signup</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="active" role="tabpanel" aria-labelledby="loginTab" autocomplete="off">
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <div class="forgot-pass" tabindex="0">Forgot your password?</div>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" role="tabpanel" aria-labelledby="signupTab" autocomplete="off">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Create Password" required />
+      <button type="submit" class="submit-btn">Signup</button>
+    </form>
+
+  </div>
+</div>
+
+<script>
+  const openModalBtn = document.getElementById('openModal');
+  const modalBg = document.getElementById('modalBg');
+  const closeModalBtn = document.getElementById('closeModal');
+  const loginTab = document.getElementById('loginTab');
+  const signupTab = document.getElementById('signupTab');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+
+  // Open modal
+  openModalBtn.addEventListener('click', () => {
+    modalBg.classList.add('active');
+    loginTab.focus();
+  });
+
+  // Close modal
+  closeModalBtn.addEventListener('click', () => {
+    modalBg.classList.remove('active');
+  });
+
+  // Close modal if clicked outside modal content
+  modalBg.addEventListener('click', (e) => {
+    if(e.target === modalBg) {
+      modalBg.classList.remove('active');
+    }
+  });
+
+  // Toggle to Login form
+  loginTab.addEventListener('click', () => {
+    loginTab.classList.add('active');
+    loginTab.setAttribute('aria-selected', 'true');
+    signupTab.classList.remove('active');
+    signupTab.setAttribute('aria-selected', 'false');
+
+    loginForm.classList.add('active');
+    signupForm.classList.remove('active');
+  });
+
+  // Toggle to Signup form
+  signupTab.addEventListener('click', () => {
+    signupTab.classList.add('active');
+    signupTab.setAttribute('aria-selected', 'true');
+    loginTab.classList.remove('active');
+    loginTab.setAttribute('aria-selected', 'false');
+
+    signupForm.classList.add('active');
+    loginForm.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
