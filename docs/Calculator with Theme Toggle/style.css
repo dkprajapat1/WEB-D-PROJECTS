@@ -11,7 +11,9 @@ body {
     width: 100vw;
     height: 100vh;
 }
-
+.main{
+    height: 90%;
+}
 #name {
     background-color: rgba(255, 255, 255, 0.367);
     font-size: x-large;
@@ -151,6 +153,21 @@ body {
     transform: translateX(-50%)
 }
 
+footer{
+    justify-self: center;
+    align-self: end;
+    margin: 10px 0px;
+    padding: 5px;
+    text-align: center; width: 90%;
+}
+footer>a{
+     text-decoration: none;
+     cursor: pointer;
+     color: rgb(255, 0, 0);
+}
+footer>a:hover{
+    color: rgb(85, 0, 255);
+}
 @media only screen and (max-width:1400px) {
     .container {
         width: 30vw;
