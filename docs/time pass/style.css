@@ -1,0 +1,69 @@
+
+        *{
+            padding: 0px;
+            margin: 0;
+             box-sizing: border-box;
+        }
+        .div{
+            margin: auto;
+           text-align: center;
+           align-content: center;
+           width: 100vw;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           padding: 30px;
+           font-weight: 600;
+           height: 100vh;
+           background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDQyejczd3k4MXhkc2l0bW1hZ3V2d3Nta3VhOTJlMDVwazU3OXV6OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnexM9LwlwGu4Z1QnS/giphy.gif);
+             /* background-repeat: no-repeat; */
+             object-fit: cover;
+             object-fit: contain;
+             background-position: center center;
+             background-size: max(100vh , 100vw);
+             position: relative;
+            
+        }
+        .button{
+            justify-self: center;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            background-color: white;
+            font-size: larger;
+            box-shadow: 3px 4px 0px 4px rgb(19 41 36);
+            transition: all 0.4s;
+            cursor: pointer;
+            text-decoration: none;
+
+        }
+        .button:hover{
+            scale: 0.8;
+            border-radius: 0px;
+        }
+        .button:active{
+            background-color: rgba(0, 0, 255, 0.382);
+        }
+
+
+        .newdiv{
+            align-self: center;
+            justify-self: center;
+            margin: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            width: 30vw;
+            background-color: white;
+            display: flex;
+        }
+        .newdiv1{
+            height: 2.8vh;
+            border-radius: 8px;
+            background : linear-gradient(to right , yellow , rgb(179, 226, 7));
+            transition: all 0.6s;
+        }
+
+        .newdiv2{
+            color: white;
+            font-size: larger;
+            font-weight: 500;
+        }
